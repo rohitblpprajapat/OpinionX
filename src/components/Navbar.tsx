@@ -25,14 +25,14 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
 					<img src="./opinionX_logo-removebg-preview.png" alt="logo" />
 				</div>
 				
-				<div>
-					<button onClick={handleToggleDropdown} className="navbar__toggle-dropdown">
-						Toggle Dropdown
+				<div className="relative">
+					<button onClick={handleToggleDropdown} className="px-5 py-2">
+						Select Wallet
 					</button>
-					<div className="dropdown navbar__links">
+					<div className="absolute -top-full right-0 bg-violet-400 text-white rounded-xl overflow-hidden w-60 navbar__links z-50">
 					{toggleDropdown && (
 						<>
-							<div>
+							<div className="mx-2 my-2">
 								<h2 className="text-3xl font-bold underline">Account</h2>
 
 								<div>
@@ -48,13 +48,11 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
 										Disconnect
 									</button>
 								)}
-							</div>
-
-							<div>
+							
 								<h2>Connect</h2>
 								{connectors.map((connector) => (
 									<button
-										className="px-4 mx-5 my-2 bg-slate-300 rounded-full"
+										className="px-4 mx-5 my-2 bg-violet-900 rounded-full"
 										key={connector.uid}
 										onClick={() => connect({ connector })}
 										type="button"
