@@ -1,5 +1,5 @@
 import { useAccount, useConnect, useDisconnect } from "wagmi";
-import { card}
+import { Card } from "./components/cards";
 window.open = (function (open) {
 	return function (url, _, features) {
 		return open.call(window, url, "_blank", features);
@@ -35,6 +35,7 @@ function App() {
 				<h2>Connect</h2>
 				{connectors.map((connector) => (
 					<button
+						className="px-4 mx-5 my-2 bg-slate-300 rounded-full"
 						key={connector.uid}
 						onClick={() => connect({ connector })}
 						type="button"
@@ -44,6 +45,7 @@ function App() {
 				))}
 				<div>{status}</div>
 				<div>{error?.message}</div>
+				<Card />
 			</div>
 		</>
 	);
