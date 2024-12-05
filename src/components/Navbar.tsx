@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
 	};
 
 	return(
-			<div className="flex flex-col justify-between">
+			<div className="flex flex-col justify-between items-center">
 				
 				<div className="navbar__links">
 					<div className="navbar__logo bg-violet-400 h-[100px] w-[100px]">
