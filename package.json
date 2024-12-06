@@ -1,12 +1,12 @@
 {
-  "name": "wc-webview-reproduction",
+  "name": "OpinionX",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "npm run generate-html && vite build",
-    "generate-html": "mkdir -p dist && cp index.html dist/",
+    "generate-html": "if not exist dist mkdir dist && copy index.html dist\\",
     "lint": "biome check .",
     "preview": "vite preview"
   },
