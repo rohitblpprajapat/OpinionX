@@ -42,7 +42,9 @@ function App() {
 							<Card 
 							key={index}
 							title={item.title}
-							description={item.description} />
+							description={item.description}
+							betoption="yes"
+							betoption2="no" />
 						))}
 					</div>
 				</section>

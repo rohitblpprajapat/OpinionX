@@ -7,3 +7,5 @@ const HiroBanner: React.FC = () => {
         </div>
     );
 }
+
+export default function HiroBanner;
