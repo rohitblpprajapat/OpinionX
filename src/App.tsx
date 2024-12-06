@@ -1,4 +1,5 @@
 import Card from "./components/cards";
+import FooterNav from "./components/FooterNav";
 import Navbar from "./components/Navbar";
 
 const games = ([
@@ -33,7 +34,7 @@ function App() {
 
 	return (
 		<>
-			<div className="bg-gradient-to-r from-cyan-500 to-blue-500">
+			<div className="">
 				<Navbar />
 				<section className="w-full flex flex-col justify-center mt-20">
 					<div className="flex justify-center flex-wrap my-12">
@@ -45,6 +46,7 @@ function App() {
 						))}
 					</div>
 				</section>
+				<FooterNav />
 			</div>
 		</>
 	);

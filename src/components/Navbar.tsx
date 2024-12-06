@@ -20,15 +20,15 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
 	};
 
 	return(
-			<div className="flex flex-col justify-between px-5 mb-2 bg-violet-900">
+			<div className="sticky top-0 flex justify-between items-center px-5 mb-2 ">
 				<div className="navbar__logo h-[100px] w-[100px] flex justify-center items-center">
 					<img src="./opinionX_logo-removebg-preview.png" alt="logo" />
 				</div>
 				
 				<div className="relative">
-					<button onClick={handleToggleDropdown} className="px-5 py-2 bg-violet-400 rounded-xl text-white flex justify-between items-center w-full">
-						Select Wallet
-						<span className={`transform ${toggleDropdown ? 'rotate-180' : ''} transition-transform`}>▼</span>
+					<button onClick={handleToggleDropdown} className="px-5 py-2 bg-violet-400 rounded-xl text-white flex justify-between items-center">
+						Select Wallet 
+						<span className={`transform ${toggleDropdown ? 'rotate-180' : ''} transition-transform`}> ▼</span>
 					</button>
 					<div className="absolute right-0 mt-2 w-60 bg-violet-400 text-white rounded-xl shadow-lg overflow-hidden z-50">
 					{toggleDropdown && (
