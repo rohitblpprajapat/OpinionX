@@ -1,4 +1,6 @@
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import React from "react";
+
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 window.open = (function (open) {
 	return function (url, _, features) {
@@ -7,9 +9,8 @@ window.open = (function (open) {
 })(window.open);
 
 
-interface NavbarProps {}
 
-const Navbar: React.FC<NavbarProps> = ({ }) => {
+const Navbar = () => {
     const account = useAccount();
 	const { connectors, connect, status, error } = useConnect();
 	const { disconnect } = useDisconnect();
@@ -25,6 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
 					<img src="./opinionX_logo-removebg-preview.png" alt="logo" />
 				</div>
 				
+				<ConnectButton />
 				<div className="relative">
 					<button onClick={handleToggleDropdown} className="px-5 py-2 bg-violet-400 rounded-xl text-white flex justify-between items-center">
 						Select Wallet 
