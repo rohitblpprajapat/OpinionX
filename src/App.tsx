@@ -33,17 +33,19 @@ function App() {
 
 	return (
 		<>
-			<Navbar />
-			<section className="w-full flex flex-col justify-center mt-20">
-				<div className="flex justify-center flex-wrap px-2 my-12">
-					{games.map((item, index) => (
-						<Card 
-						key={index}
-						title={item.title}
-						description={item.description} />
-					))}
-				</div>
-			</section>
+			<div className="bg-gradient-to-r from-cyan-500 to-blue-500">
+				<Navbar />
+				<section className="w-full flex flex-col justify-center mt-20">
+					<div className="flex justify-center flex-wrap my-12">
+						{games.map((item, index) => (
+							<Card 
+							key={index}
+							title={item.title}
+							description={item.description} />
+						))}
+					</div>
+				</section>
+			</div>
 		</>
 	);
 }

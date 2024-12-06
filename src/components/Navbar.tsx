@@ -20,39 +20,40 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
 	};
 
 	return(
-			<div className="flex flex-col justify-between items-center px-5 my-2 mb-2 bg-violet-900">
-				<div className="navbar__logo bg-violet-400 h-[100px] w-[100px]">
+			<div className="flex flex-col justify-between px-5 mb-2 bg-violet-900">
+				<div className="navbar__logo h-[100px] w-[100px] flex justify-center items-center">
 					<img src="./opinionX_logo-removebg-preview.png" alt="logo" />
 				</div>
 				
 				<div className="relative">
-					<button onClick={handleToggleDropdown} className="px-5 py-2">
+					<button onClick={handleToggleDropdown} className="px-5 py-2 bg-violet-400 rounded-xl text-white flex justify-between items-center w-full">
 						Select Wallet
+						<span className={`transform ${toggleDropdown ? 'rotate-180' : ''} transition-transform`}>▼</span>
 					</button>
-					<div className="absolute -top-full right-0 bg-violet-400 text-white rounded-xl overflow-hidden w-60 navbar__links z-50">
+					<div className="absolute right-0 mt-2 w-60 bg-violet-400 text-white rounded-xl shadow-lg overflow-hidden z-50">
 					{toggleDropdown && (
 						<>
-							<div className="mx-2 my-2">
-								<h2 className="text-3xl font-bold underline">Account</h2>
-
+							<div className="px-2 py-3">
+								<h2 className="text-xl font-bold underline">Account</h2>
+								<br />
 								<div>
-									status: {account.status}
+									<span className="font-bold">status: </span>{account.status}
 									<br />
-									addresses: {JSON.stringify(account.addresses)}
+									<span className="font-bold">addresses:</span> {JSON.stringify(account.addresses)}
 									<br />
-									chainId: {account.chainId}
+									<span className="font-bold">chainId:</span> {account.chainId}
 								</div>
 
 								{account.status === "connected" && (
-									<button type="button" onClick={() => disconnect()}>
+									<button className="px-5 py-2 bg-red-500 rounded w-full" type="button" onClick={() => disconnect()}>
 										Disconnect
 									</button>
 								)}
 							
-								<h2>Connect</h2>
+								<h2 className="font-bold">Connect: </h2>
 								{connectors.map((connector) => (
 									<button
-										className="px-4 mx-5 my-2 bg-violet-900 rounded-full"
+										className="px-4 mx-5 my-1 bg-violet-900"
 										key={connector.uid}
 										onClick={() => connect({ connector })}
 										type="button"
@@ -60,13 +61,14 @@ const Navbar: React.FC<NavbarProps> = ({ }) => {
 										{connector.name}
 									</button>
 								))}
-								<div>{status}</div>
-								<div>{error?.message}</div>
+								<div className="mt-2">{status}</div>
+								<div className="text-orange-300">{error?.message}</div>
 							</div>
 
 						</>
-					)}
-				</div>
+						)}
+					</div>
+
 				</div>
 			</div>
 		)

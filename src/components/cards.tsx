@@ -8,7 +8,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description }) => {
     return (
-        <div className="px-5 ease-in-out transition duration-300 flex flex-col justify-between w-60 h-[300px] border-2 rounded-2xl hover:shadow-lg hover:scale-105">
+        <div className="px-5 mx-4 bg-slate-100 ease-in-out transition duration-300 flex flex-col justify-between w-60 h-[300px] border-2 rounded-2xl hover:shadow-lg hover:scale-105">
             <div className="mx-2 mt-2">
                 <h2 className="font-bold">{title}</h2>
                 <p>{description}</p>
