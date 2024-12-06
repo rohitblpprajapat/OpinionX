@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "npm run generate-html && vite build",
-    "generate-html": "if not exist dist mkdir dist && copy index.html dist\\",
+    "build": "vite build",
+    "generate-html": "mkdir -p dist && cp index.html dist/",
     "lint": "biome check .",
     "preview": "vite preview"
   },
@@ -31,3 +31,4 @@
     "vite": "^5.2.11"
   }
 }
+
